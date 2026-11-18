@@ -57,43 +57,43 @@ export default function Home() {
   return (
     <div className="space-y-10">
       {/* Retro Clubhouse Hero Banner */}
-      <section className="retro-card p-6 sm:p-10 bg-white relative overflow-hidden">
+      <section className="retro-card p-6 sm:p-10 bg-white dark:bg-shadow-grey relative overflow-hidden transition-colors duration-150">
         {/* Subtle retro badge in background */}
-        <div className="absolute -right-8 -bottom-8 w-48 h-48 opacity-5 text-shadow-grey pointer-events-none">
+        <div className="absolute -right-8 -bottom-8 w-48 h-48 opacity-5 text-shadow-grey dark:text-platinum pointer-events-none">
           <BallIcon className="w-full h-full" />
         </div>
 
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-mustard border-2 border-shadow-grey shadow-[2px_2px_0px_#272727] text-xs font-black uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-mustard border-2 border-shadow-grey shadow-[2px_2px_0px_#272727] dark:shadow-[2px_2px_0px_#111111] text-xs font-black uppercase tracking-wider mb-4 text-shadow-grey">
             <span className="w-2 h-2 rounded-full bg-shadow-grey" />
             Temporada 2026 • Reservas Online
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-shadow-grey font-retro tracking-tight leading-none mb-4">
+          <h1 className="text-3xl sm:text-5xl font-black text-shadow-grey dark:text-platinum font-retro tracking-tight leading-none mb-4">
             ELEGÍ TU CANCHA, RESERVÁ TU TURNO Y JUGÁ.
           </h1>
 
-          <p className="text-base sm:text-lg text-dim-grey font-medium leading-relaxed mb-6">
+          <p className="text-base sm:text-lg text-dim-grey dark:text-platinum/70 font-medium leading-relaxed mb-6">
             Instalaciones de alto rendimiento para fútbol 5 y 7. Superficie de césped sintético de última generación, iluminación LED nocturna y vestuarios con duchas.
           </p>
 
           {/* Retro stadium perks */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t-2 border-platinum">
-            <div className="flex items-center gap-2.5 text-xs font-bold text-shadow-grey">
-              <span className="w-7 h-7 bg-platinum border border-shadow-grey flex items-center justify-center shrink-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t-2 border-platinum dark:border-dim-grey/30">
+            <div className="flex items-center gap-2.5 text-xs font-bold text-shadow-grey dark:text-platinum">
+              <span className="w-7 h-7 bg-platinum dark:bg-[#1a1a1a] border border-shadow-grey dark:border-dim-grey/50 flex items-center justify-center shrink-0">
                 <ClockIcon className="w-4 h-4 text-pacific-blue" />
               </span>
               <span>Confirmación al instante</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs font-bold text-shadow-grey">
-              <span className="w-7 h-7 bg-platinum border border-shadow-grey flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-2.5 text-xs font-bold text-shadow-grey dark:text-platinum">
+              <span className="w-7 h-7 bg-platinum dark:bg-[#1a1a1a] border border-shadow-grey dark:border-dim-grey/50 flex items-center justify-center shrink-0">
                 <ShieldIcon className="w-4 h-4 text-mustard" />
               </span>
               <span>Canchas Techadas y Abiertas</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs font-bold text-shadow-grey">
-              <span className="w-7 h-7 bg-platinum border border-shadow-grey flex items-center justify-center shrink-0">
-                <BallIcon className="w-4 h-4 text-dim-grey" />
+            <div className="flex items-center gap-2.5 text-xs font-bold text-shadow-grey dark:text-platinum">
+              <span className="w-7 h-7 bg-platinum dark:bg-[#1a1a1a] border border-shadow-grey dark:border-dim-grey/50 flex items-center justify-center shrink-0">
+                <BallIcon className="w-4 h-4 text-dim-grey dark:text-platinum/60" />
               </span>
               <span>Pelota y pecheras incluidas</span>
             </div>
@@ -110,13 +110,13 @@ export default function Home() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Buscar por nombre de cancha..."
-            className="retro-input w-full px-4 py-2.5 text-sm font-semibold placeholder:text-dim-grey/70"
+            className="retro-input w-full px-4 py-2.5 text-sm font-semibold placeholder:text-dim-grey/70 dark:placeholder:text-platinum/40"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-dim-grey hover:text-shadow-grey"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-dim-grey dark:text-platinum/70 hover:text-shadow-grey dark:hover:text-platinum"
             >
               Borrar
             </button>
@@ -124,14 +124,14 @@ export default function Home() {
         </div>
 
         {/* Filter Pills */}
-        <div className="inline-flex p-1 bg-white border-2 border-shadow-grey shadow-[2px_2px_0px_#272727] self-start sm:self-auto">
+        <div className="inline-flex p-1 bg-white dark:bg-shadow-grey border-2 border-shadow-grey dark:border-dim-grey/60 shadow-[2px_2px_0px_#272727] dark:shadow-[2px_2px_0px_#111111] self-start sm:self-auto transition-colors duration-150">
           <button
             type="button"
             onClick={() => setFilterCovered('all')}
-            className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all ${
+            className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
               filterCovered === 'all'
-                ? 'bg-shadow-grey text-white'
-                : 'text-dim-grey hover:text-shadow-grey'
+                ? 'bg-shadow-grey dark:bg-mustard text-white dark:text-shadow-grey'
+                : 'text-dim-grey dark:text-platinum/70 hover:text-shadow-grey dark:hover:text-platinum'
             }`}
           >
             Todas ({courts.length})
@@ -139,10 +139,10 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setFilterCovered('covered')}
-            className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all ${
+            className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
               filterCovered === 'covered'
                 ? 'bg-pacific-blue text-white'
-                : 'text-dim-grey hover:text-shadow-grey'
+                : 'text-dim-grey dark:text-platinum/70 hover:text-shadow-grey dark:hover:text-platinum'
             }`}
           >
             Cubiertas
@@ -150,10 +150,10 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setFilterCovered('outdoor')}
-            className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all ${
+            className={`px-3 py-1.5 text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
               filterCovered === 'outdoor'
                 ? 'bg-mustard text-shadow-grey'
-                : 'text-dim-grey hover:text-shadow-grey'
+                : 'text-dim-grey dark:text-platinum/70 hover:text-shadow-grey dark:hover:text-platinum'
             }`}
           >
             Al Aire Libre
@@ -163,10 +163,10 @@ export default function Home() {
 
       {/* Courts Grid / Content State */}
       <section>
-        <div className="flex items-center justify-between mb-6 pb-2 border-b-2 border-shadow-grey">
-          <h2 className="text-xl sm:text-2xl font-black text-shadow-grey font-retro uppercase tracking-tight flex items-center gap-2">
+        <div className="flex items-center justify-between mb-6 pb-2 border-b-2 border-shadow-grey dark:border-dim-grey/60">
+          <h2 className="text-xl sm:text-2xl font-black text-shadow-grey dark:text-platinum font-retro uppercase tracking-tight flex items-center gap-2">
             <span>Canchas Disponibles</span>
-            <span className="text-xs px-2 py-0.5 bg-mustard border border-shadow-grey font-mono">
+            <span className="text-xs px-2 py-0.5 bg-mustard text-shadow-grey border border-shadow-grey font-mono font-bold">
               {filteredCourts.length}
             </span>
           </h2>
@@ -180,12 +180,12 @@ export default function Home() {
                 key={i}
                 className="retro-card h-96 p-4 animate-pulse flex flex-col justify-between"
               >
-                <div className="h-48 bg-platinum border border-dim-grey/30 mb-4" />
+                <div className="h-48 bg-platinum dark:bg-[#1f1f1f] border border-dim-grey/30 mb-4" />
                 <div className="space-y-3">
-                  <div className="h-6 bg-platinum w-3/4" />
-                  <div className="h-4 bg-platinum w-1/2" />
+                  <div className="h-6 bg-platinum dark:bg-[#1f1f1f] w-3/4" />
+                  <div className="h-4 bg-platinum dark:bg-[#1f1f1f] w-1/2" />
                 </div>
-                <div className="h-10 bg-platinum border border-dim-grey/30 mt-4" />
+                <div className="h-10 bg-platinum dark:bg-[#1f1f1f] border border-dim-grey/30 mt-4" />
               </div>
             ))}
           </div>
@@ -193,15 +193,15 @@ export default function Home() {
 
         {/* Error State */}
         {!loading && error && (
-          <div className="retro-card p-8 text-center bg-white border-red-500">
-            <div className="w-12 h-12 bg-red-100 text-red-600 border-2 border-red-500 mx-auto flex items-center justify-center font-black text-xl mb-3">
+          <div className="retro-card p-8 text-center bg-white dark:bg-shadow-grey border-red-500">
+            <div className="w-12 h-12 bg-red-100 dark:bg-red-950 text-red-600 dark:text-red-400 border-2 border-red-500 mx-auto flex items-center justify-center font-black text-xl mb-3">
               !
             </div>
-            <h3 className="text-lg font-black text-shadow-grey font-retro mb-2">
+            <h3 className="text-lg font-black text-shadow-grey dark:text-platinum font-retro mb-2">
               No pudimos conectar con el servidor
             </h3>
-            <p className="text-sm text-dim-grey max-w-md mx-auto mb-5">
-              {error}. Comprobá que el backend de Rails esté corriendo en <code className="bg-platinum px-1 py-0.5">http://localhost:3000</code>.
+            <p className="text-sm text-dim-grey dark:text-platinum/70 max-w-md mx-auto mb-5">
+              {error}. Comprobá que el backend de Rails esté corriendo en <code className="bg-platinum dark:bg-[#1a1a1a] px-1 py-0.5 border border-dim-grey/30">http://localhost:3000</code>.
             </p>
             <button
               type="button"
@@ -215,14 +215,14 @@ export default function Home() {
 
         {/* Empty State */}
         {!loading && !error && filteredCourts.length === 0 && (
-          <div className="retro-card p-12 text-center bg-white">
-            <div className="w-16 h-16 bg-platinum border-2 border-shadow-grey shadow-[3px_3px_0px_#272727] mx-auto flex items-center justify-center text-dim-grey mb-4">
+          <div className="retro-card p-12 text-center bg-white dark:bg-shadow-grey">
+            <div className="w-16 h-16 bg-platinum dark:bg-[#1a1a1a] border-2 border-shadow-grey dark:border-dim-grey/60 shadow-[3px_3px_0px_#272727] dark:shadow-[3px_3px_0px_#111111] mx-auto flex items-center justify-center text-dim-grey dark:text-platinum/60 mb-4">
               <BallIcon className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-black text-shadow-grey font-retro mb-2">
+            <h3 className="text-xl font-black text-shadow-grey dark:text-platinum font-retro mb-2">
               No se encontraron canchas
             </h3>
-            <p className="text-sm text-dim-grey max-w-md mx-auto mb-6">
+            <p className="text-sm text-dim-grey dark:text-platinum/70 max-w-md mx-auto mb-6">
               {searchQuery
                 ? `No hay canchas que coincidan con "${searchQuery}". Probá con otro término.`
                 : 'Aún no se han configurado canchas en el sistema.'}
@@ -231,7 +231,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
-                className="retro-btn px-4 py-2 bg-platinum text-shadow-grey text-xs font-black uppercase tracking-wider"
+                className="retro-btn px-4 py-2 bg-platinum dark:bg-[#1a1a1a] text-shadow-grey dark:text-platinum text-xs font-black uppercase tracking-wider"
               >
                 Limpiar búsqueda
               </button>

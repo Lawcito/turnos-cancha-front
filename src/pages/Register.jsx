@@ -50,23 +50,23 @@ export default function Register() {
 
   return (
     <div className="max-w-md mx-auto my-6 sm:my-10">
-      <div className="retro-card bg-white p-6 sm:p-8 relative">
+      <div className="retro-card bg-white dark:bg-shadow-grey p-6 sm:p-8 relative transition-colors duration-150">
         {/* Header */}
         <div className="text-center mb-6">
-          <div className="w-12 h-12 bg-pacific-blue text-white border-2 border-shadow-grey shadow-[3px_3px_0px_#272727] mx-auto flex items-center justify-center mb-3">
+          <div className="w-12 h-12 bg-pacific-blue text-white border-2 border-shadow-grey shadow-[3px_3px_0px_#272727] dark:shadow-[3px_3px_0px_#111111] mx-auto flex items-center justify-center mb-3">
             <BallIcon className="w-7 h-7" />
           </div>
-          <h1 className="text-2xl font-black text-shadow-grey font-retro tracking-tight uppercase">
+          <h1 className="text-2xl font-black text-shadow-grey dark:text-platinum font-retro tracking-tight uppercase">
             Ficha de Nuevo Socio
           </h1>
-          <p className="text-xs text-dim-grey uppercase tracking-wider font-bold mt-1">
+          <p className="text-xs text-dim-grey dark:text-platinum/70 uppercase tracking-wider font-bold mt-1">
             Creá tu cuenta para empezar a reservar canchas
           </p>
         </div>
 
         {/* Validation Errors Box */}
         {errors.length > 0 && (
-          <div className="mb-5 p-3.5 bg-red-50 border-2 border-red-500 text-xs font-bold text-red-700 animate-in fade-in space-y-1">
+          <div className="mb-5 p-3.5 bg-red-50 dark:bg-red-950/40 border-2 border-red-500 text-xs font-bold text-red-700 dark:text-red-300 animate-in fade-in space-y-1">
             <div className="flex items-center gap-1.5 font-black uppercase tracking-wider mb-1">
               <AlertCircleIcon className="w-4 h-4 shrink-0" />
               <span>Por favor corregí los siguientes errores:</span>
@@ -81,7 +81,7 @@ export default function Register() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-shadow-grey mb-1">
+            <label className="block text-xs font-black uppercase tracking-wider text-shadow-grey dark:text-platinum mb-1">
               Correo Electrónico
             </label>
             <div className="relative">
@@ -92,16 +92,16 @@ export default function Register() {
                 placeholder="juan@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="retro-input w-full px-3.5 py-2.5 text-sm font-semibold"
+                className="retro-input w-full px-3.5 py-2.5 text-sm font-semibold placeholder:text-dim-grey/60 dark:placeholder:text-platinum/40"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim-grey pointer-events-none">
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim-grey dark:text-platinum/60 pointer-events-none">
                 <UserIcon className="w-4 h-4" />
               </span>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-shadow-grey mb-1">
+            <label className="block text-xs font-black uppercase tracking-wider text-shadow-grey dark:text-platinum mb-1">
               Contraseña (mínimo 6 caracteres)
             </label>
             <div className="relative">
@@ -112,16 +112,16 @@ export default function Register() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="retro-input w-full px-3.5 py-2.5 text-sm font-semibold"
+                className="retro-input w-full px-3.5 py-2.5 text-sm font-semibold placeholder:text-dim-grey/60 dark:placeholder:text-platinum/40"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim-grey pointer-events-none">
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim-grey dark:text-platinum/60 pointer-events-none">
                 <LockIcon className="w-4 h-4" />
               </span>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-black uppercase tracking-wider text-shadow-grey mb-1">
+            <label className="block text-xs font-black uppercase tracking-wider text-shadow-grey dark:text-platinum mb-1">
               Confirmar Contraseña
             </label>
             <div className="relative">
@@ -132,9 +132,9 @@ export default function Register() {
                 placeholder="••••••••"
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
-                className="retro-input w-full px-3.5 py-2.5 text-sm font-semibold"
+                className="retro-input w-full px-3.5 py-2.5 text-sm font-semibold placeholder:text-dim-grey/60 dark:placeholder:text-platinum/40"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim-grey pointer-events-none">
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-dim-grey dark:text-platinum/60 pointer-events-none">
                 <LockIcon className="w-4 h-4" />
               </span>
             </div>
@@ -149,11 +149,11 @@ export default function Register() {
           </button>
         </form>
 
-        <div className="mt-6 pt-5 border-t-2 border-platinum text-center text-xs text-dim-grey">
+        <div className="mt-6 pt-5 border-t-2 border-platinum dark:border-dim-grey/30 text-center text-xs text-dim-grey dark:text-platinum/70">
           <span>¿Ya estás registrado? </span>
           <Link
             to="/login"
-            className="font-black text-shadow-grey underline hover:text-pacific-blue ml-1"
+            className="font-black text-shadow-grey dark:text-mustard underline hover:text-pacific-blue ml-1"
           >
             Iniciá sesión acá
           </Link>

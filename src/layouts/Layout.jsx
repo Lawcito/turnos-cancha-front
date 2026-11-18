@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer';
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col bg-platinum text-shadow-grey font-sans selection:bg-mustard selection:text-shadow-grey">
+    <div className="min-h-screen flex flex-col bg-platinum dark:bg-[#181818] text-shadow-grey dark:text-platinum font-sans selection:bg-mustard selection:text-shadow-grey transition-colors duration-150">
       {/* Top Navbar */}
       <Navbar />
 

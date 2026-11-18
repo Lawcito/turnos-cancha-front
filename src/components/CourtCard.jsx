@@ -47,26 +47,26 @@ export function CourtCard({ court }) {
       </div>
 
       {/* Card Content */}
-      <div className="p-5 flex-1 flex flex-col justify-between bg-white">
+      <div className="p-5 flex-1 flex flex-col justify-between bg-white dark:bg-shadow-grey transition-colors duration-150">
         <div>
           <div className="flex items-center justify-between gap-2 mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-dim-grey">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-dim-grey dark:text-platinum/60">
               Nº 0{id} • FÚTBOL
             </span>
           </div>
 
-          <h3 className="text-xl font-extrabold text-shadow-grey tracking-tight font-retro mb-3">
+          <h3 className="text-xl font-extrabold text-shadow-grey dark:text-platinum tracking-tight font-retro mb-3">
             {name}
           </h3>
         </div>
 
         {/* Pricing & CTA */}
-        <div className="pt-4 border-t-2 border-platinum flex items-end justify-between gap-4">
+        <div className="pt-4 border-t-2 border-platinum dark:border-dim-grey/30 flex items-end justify-between gap-4">
           <div>
-            <span className="block text-xs font-bold text-dim-grey uppercase tracking-wider">
+            <span className="block text-xs font-bold text-dim-grey dark:text-platinum/60 uppercase tracking-wider">
               Precio por Turno
             </span>
-            <span className="text-2xl font-black text-shadow-grey font-retro tracking-tight">
+            <span className="text-2xl font-black text-shadow-grey dark:text-mustard font-retro tracking-tight">
               {formattedPrice}
             </span>
           </div>

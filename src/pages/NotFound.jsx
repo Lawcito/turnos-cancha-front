@@ -3,17 +3,17 @@ import { BallIcon } from '../components/Icons';
 
 export default function NotFound() {
   return (
-    <div className="retro-card p-12 text-center bg-white max-w-lg mx-auto my-12">
-      <div className="w-16 h-16 bg-mustard border-2 border-shadow-grey shadow-[3px_3px_0px_#272727] mx-auto flex items-center justify-center text-shadow-grey mb-4">
+    <div className="retro-card p-12 text-center bg-white dark:bg-shadow-grey max-w-lg mx-auto my-12 transition-colors duration-150">
+      <div className="w-16 h-16 bg-mustard border-2 border-shadow-grey shadow-[3px_3px_0px_#272727] dark:shadow-[3px_3px_0px_#111111] mx-auto flex items-center justify-center text-shadow-grey mb-4">
         <BallIcon className="w-9 h-9" />
       </div>
       <span className="font-mono text-xs font-black uppercase tracking-widest text-pacific-blue">
         Error 404 • Fuera de juego
       </span>
-      <h1 className="text-3xl font-black text-shadow-grey font-retro mt-2 mb-3">
+      <h1 className="text-3xl font-black text-shadow-grey dark:text-platinum font-retro mt-2 mb-3">
         Pelota fuera del campo
       </h1>
-      <p className="text-sm text-dim-grey leading-relaxed mb-6">
+      <p className="text-sm text-dim-grey dark:text-platinum/70 leading-relaxed mb-6">
         La página que estás buscando no existe o fue movida de lugar.
       </p>
       <Link

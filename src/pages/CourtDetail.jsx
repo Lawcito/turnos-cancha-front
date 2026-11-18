@@ -168,21 +168,21 @@ export default function CourtDetail() {
 
   if (loadingCourt) {
     return (
-      <div className="retro-card p-12 text-center bg-white max-w-xl mx-auto animate-pulse">
-        <div className="h-6 bg-platinum w-1/3 mx-auto mb-4" />
-        <div className="h-4 bg-platinum w-1/2 mx-auto" />
+      <div className="retro-card p-12 text-center bg-white dark:bg-shadow-grey max-w-xl mx-auto animate-pulse">
+        <div className="h-6 bg-platinum dark:bg-[#1a1a1a] w-1/3 mx-auto mb-4" />
+        <div className="h-4 bg-platinum dark:bg-[#1a1a1a] w-1/2 mx-auto" />
       </div>
     );
   }
 
   if (courtError || !court) {
     return (
-      <div className="retro-card p-8 text-center bg-white max-w-xl mx-auto border-red-500">
+      <div className="retro-card p-8 text-center bg-white dark:bg-shadow-grey max-w-xl mx-auto border-red-500">
         <AlertCircleIcon className="w-12 h-12 text-red-500 mx-auto mb-3" />
-        <h2 className="text-xl font-black text-shadow-grey font-retro mb-2">
+        <h2 className="text-xl font-black text-shadow-grey dark:text-platinum font-retro mb-2">
           Cancha no encontrada
         </h2>
-        <p className="text-sm text-dim-grey mb-6">
+        <p className="text-sm text-dim-grey dark:text-platinum/70 mb-6">
           {courtError || 'El identificador de cancha no existe o no se encuentra disponible.'}
         </p>
         <Link
@@ -201,7 +201,7 @@ export default function CourtDetail() {
       <div>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-dim-grey hover:text-shadow-grey transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-dim-grey dark:text-platinum/70 hover:text-shadow-grey dark:hover:text-platinum transition-colors"
         >
           <ArrowLeftIcon className="w-4 h-4" />
           <span>Volver al listado de canchas</span>
@@ -209,10 +209,10 @@ export default function CourtDetail() {
       </div>
 
       {/* Main Court Hero Card */}
-      <section className="retro-card bg-white overflow-hidden">
+      <section className="retro-card bg-white dark:bg-shadow-grey overflow-hidden transition-colors duration-150">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           {/* Court Photo / Illustration */}
-          <div className="lg:col-span-5 relative h-64 lg:h-auto min-h-[260px] bg-shadow-grey border-b-2 lg:border-b-0 lg:border-r-2 border-shadow-grey">
+          <div className="lg:col-span-5 relative h-64 lg:h-auto min-h-[260px] bg-shadow-grey border-b-2 lg:border-b-0 lg:border-r-2 border-shadow-grey dark:border-dim-grey/60">
             {court.photo_url ? (
               <img
                 src={court.photo_url}
@@ -250,52 +250,52 @@ export default function CourtDetail() {
           {/* Court Details */}
           <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-dim-grey uppercase tracking-widest mb-1">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-dim-grey dark:text-platinum/60 uppercase tracking-widest mb-1">
                 <span>CANCHA Nº 0{court.id}</span>
                 <span>•</span>
                 <span>FÚTBOL SINTÉTICO</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-black text-shadow-grey font-retro tracking-tight mb-4">
+              <h1 className="text-2xl sm:text-4xl font-black text-shadow-grey dark:text-platinum font-retro tracking-tight mb-4">
                 {court.name}
               </h1>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4 p-4 bg-platinum border-2 border-shadow-grey text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4 p-4 bg-platinum dark:bg-[#1c1c1c] border-2 border-shadow-grey dark:border-dim-grey/60 text-xs">
                 <div>
-                  <span className="block text-dim-grey font-bold uppercase text-[10px]">
+                  <span className="block text-dim-grey dark:text-platinum/60 font-bold uppercase text-[10px]">
                     Superficie
                   </span>
-                  <span className="font-extrabold text-shadow-grey">Sintético Pro</span>
+                  <span className="font-extrabold text-shadow-grey dark:text-platinum">Sintético Pro</span>
                 </div>
                 <div>
-                  <span className="block text-dim-grey font-bold uppercase text-[10px]">
+                  <span className="block text-dim-grey dark:text-platinum/60 font-bold uppercase text-[10px]">
                     Modalidad
                   </span>
-                  <span className="font-extrabold text-shadow-grey">
+                  <span className="font-extrabold text-shadow-grey dark:text-platinum">
                     {court.covered ? 'Techada (Climatizada)' : 'Descubierta (LED)'}
                   </span>
                 </div>
                 <div>
-                  <span className="block text-dim-grey font-bold uppercase text-[10px]">
+                  <span className="block text-dim-grey dark:text-platinum/60 font-bold uppercase text-[10px]">
                     Duración
                   </span>
-                  <span className="font-extrabold text-shadow-grey">60 minutos</span>
+                  <span className="font-extrabold text-shadow-grey dark:text-platinum">60 minutos</span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-4 border-t-2 border-platinum flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-4 border-t-2 border-platinum dark:border-dim-grey/30 flex flex-wrap items-center justify-between gap-4">
               <div>
-                <span className="block text-xs font-bold text-dim-grey uppercase tracking-wider">
+                <span className="block text-xs font-bold text-dim-grey dark:text-platinum/60 uppercase tracking-wider">
                   Tarifa oficial por turno
                 </span>
-                <span className="text-3xl font-black text-shadow-grey font-retro">
+                <span className="text-3xl font-black text-shadow-grey dark:text-mustard font-retro">
                   {formattedPrice}
                 </span>
               </div>
 
-              <div className="text-xs text-dim-grey font-medium text-right">
-                <span className="block font-bold text-shadow-grey">Pago en recepción o seña</span>
+              <div className="text-xs text-dim-grey dark:text-platinum/70 font-medium text-right">
+                <span className="block font-bold text-shadow-grey dark:text-platinum">Pago en recepción o seña</span>
                 <span>Cancelación gratuita hasta 3hs antes</span>
               </div>
             </div>
@@ -305,18 +305,18 @@ export default function CourtDetail() {
 
       {/* Booking Alerts / Feedback */}
       {bookingSuccess && (
-        <div className="retro-card p-6 bg-emerald-50 border-emerald-600 animate-in fade-in duration-200">
+        <div className="retro-card p-6 bg-emerald-50 dark:bg-emerald-950/40 border-emerald-600 animate-in fade-in duration-200">
           <div className="flex items-start gap-3">
             <div className="p-2 bg-emerald-500 text-white border-2 border-shadow-grey shadow-[2px_2px_0px_#272727] shrink-0">
               <CheckIcon className="w-5 h-5" />
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-black text-shadow-grey font-retro">
+              <h3 className="text-lg font-black text-shadow-grey dark:text-platinum font-retro">
                 ¡Reserva creada exitosamente!
               </h3>
-              <p className="text-sm text-dim-grey mt-1">
-                Tu turno para el día <strong className="text-shadow-grey">{bookingSuccess.date}</strong> en horario{' '}
-                <strong className="text-shadow-grey">
+              <p className="text-sm text-dim-grey dark:text-platinum/80 mt-1">
+                Tu turno para el día <strong className="text-shadow-grey dark:text-platinum">{bookingSuccess.date}</strong> en horario{' '}
+                <strong className="text-shadow-grey dark:text-platinum">
                   {bookingSuccess.time_slot?.formatted || bookingSuccess.time_slot?.start_time}
                 </strong>{' '}
                 ha sido agendado con estado <strong className="text-mustard bg-shadow-grey px-1.5 py-0.5 text-xs uppercase">Pendiente</strong>.
@@ -331,7 +331,7 @@ export default function CourtDetail() {
                 <button
                   type="button"
                   onClick={() => setBookingSuccess(null)}
-                  className="retro-btn px-4 py-2 bg-platinum text-shadow-grey text-xs font-bold uppercase tracking-wider"
+                  className="retro-btn px-4 py-2 bg-platinum dark:bg-[#1c1c1c] text-shadow-grey dark:text-platinum text-xs font-bold uppercase tracking-wider"
                 >
                   Seguir reservando
                 </button>
@@ -342,43 +342,43 @@ export default function CourtDetail() {
       )}
 
       {bookingError && (
-        <div className="retro-card p-5 bg-red-50 border-red-500 animate-in fade-in duration-200">
+        <div className="retro-card p-5 bg-red-50 dark:bg-red-950/40 border-red-500 animate-in fade-in duration-200">
           <div className="flex items-start gap-3">
             <div className="p-2 bg-red-500 text-white border-2 border-shadow-grey shadow-[2px_2px_0px_#272727] shrink-0">
               <AlertCircleIcon className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-black text-red-700 font-retro">
+              <h3 className="text-base font-black text-red-700 dark:text-red-400 font-retro">
                 No pudimos procesar tu reserva
               </h3>
-              <p className="text-sm text-red-900 mt-1">{bookingError}</p>
+              <p className="text-sm text-red-900 dark:text-red-200 mt-1">{bookingError}</p>
             </div>
           </div>
         </div>
       )}
 
       {/* Turnos Section */}
-      <section className="retro-card p-6 sm:p-8 bg-white space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b-2 border-shadow-grey gap-4">
+      <section className="retro-card p-6 sm:p-8 bg-white dark:bg-shadow-grey space-y-6 transition-colors duration-150">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b-2 border-shadow-grey dark:border-dim-grey/60 gap-4">
           <div>
-            <h2 className="text-2xl font-black text-shadow-grey font-retro tracking-tight">
+            <h2 className="text-2xl font-black text-shadow-grey dark:text-platinum font-retro tracking-tight">
               SELECCIONÁ DÍA Y HORARIO
             </h2>
-            <p className="text-xs text-dim-grey font-medium mt-0.5">
-              Los turnos en verde o blanco están libres. Los turnos tachados ya fueron reservados.
+            <p className="text-xs text-dim-grey dark:text-platinum/70 font-medium mt-0.5">
+              Los turnos con borde mostaza o blanco están libres. Los turnos tachados ya fueron reservados.
             </p>
           </div>
 
           {/* Native Date Picker */}
           <div className="flex items-center gap-2 self-start sm:self-auto">
-            <div className="flex items-center gap-2 p-2 bg-platinum border-2 border-shadow-grey shadow-[2px_2px_0px_#272727]">
-              <CalendarIcon className="w-4 h-4 text-shadow-grey" />
+            <div className="flex items-center gap-2 p-2 bg-platinum dark:bg-[#1c1c1c] border-2 border-shadow-grey dark:border-dim-grey/60 shadow-[2px_2px_0px_#272727] dark:shadow-[2px_2px_0px_#111111]">
+              <CalendarIcon className="w-4 h-4 text-shadow-grey dark:text-platinum" />
               <input
                 type="date"
                 min={getTodayString()}
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
-                className="bg-transparent text-xs font-black text-shadow-grey outline-none cursor-pointer"
+                className="bg-transparent text-xs font-black text-shadow-grey dark:text-platinum outline-none cursor-pointer"
               />
             </div>
           </div>
@@ -393,10 +393,10 @@ export default function CourtDetail() {
                 key={q.iso}
                 type="button"
                 onClick={() => setSelectedDate(q.iso)}
-                className={`px-3.5 py-1.5 text-xs font-black uppercase tracking-wider border-2 transition-all ${
+                className={`px-3.5 py-1.5 text-xs font-black uppercase tracking-wider border-2 transition-all cursor-pointer ${
                   isCurrent
-                    ? 'bg-shadow-grey text-mustard border-shadow-grey shadow-[2px_2px_0px_#272727]'
-                    : 'bg-white hover:bg-platinum text-shadow-grey border-shadow-grey'
+                    ? 'bg-shadow-grey dark:bg-mustard text-mustard dark:text-shadow-grey border-shadow-grey shadow-[2px_2px_0px_#272727] dark:shadow-[2px_2px_0px_#fed766]'
+                    : 'bg-white dark:bg-[#1c1c1c] hover:bg-platinum dark:hover:bg-[#252525] text-shadow-grey dark:text-platinum border-shadow-grey dark:border-dim-grey/60'
                 }`}
               >
                 {q.label}
@@ -410,27 +410,27 @@ export default function CourtDetail() {
           {loadingSlots ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 py-8 animate-pulse">
               {[1, 2, 3, 4, 5, 6].map((n) => (
-                <div key={n} className="h-20 bg-platinum border-2 border-dim-grey/20" />
+                <div key={n} className="h-20 bg-platinum dark:bg-[#1a1a1a] border-2 border-dim-grey/20 dark:border-dim-grey/40" />
               ))}
             </div>
           ) : slotsError ? (
-            <div className="p-6 bg-red-50 border-2 border-red-300 text-center">
-              <p className="text-sm font-bold text-red-700">{slotsError}</p>
+            <div className="p-6 bg-red-50 dark:bg-red-950/40 border-2 border-red-300 dark:border-red-700 text-center">
+              <p className="text-sm font-bold text-red-700 dark:text-red-300">{slotsError}</p>
               <button
                 type="button"
                 onClick={() => setSlotsRefreshKey((k) => k + 1)}
-                className="retro-btn mt-3 px-4 py-1.5 bg-white text-xs font-black uppercase"
+                className="retro-btn mt-3 px-4 py-1.5 bg-white dark:bg-[#1c1c1c] text-shadow-grey dark:text-platinum text-xs font-black uppercase"
               >
                 Reintentar
               </button>
             </div>
           ) : timeSlots.length === 0 ? (
-            <div className="p-10 border-2 border-dashed border-dim-grey/40 text-center bg-platinum/40">
-              <ClockIcon className="w-8 h-8 text-dim-grey mx-auto mb-2 opacity-60" />
-              <h4 className="text-base font-black text-shadow-grey font-retro">
+            <div className="p-10 border-2 border-dashed border-dim-grey/40 dark:border-dim-grey/40 text-center bg-platinum/40 dark:bg-[#1a1a1a]/40">
+              <ClockIcon className="w-8 h-8 text-dim-grey dark:text-platinum/50 mx-auto mb-2 opacity-60" />
+              <h4 className="text-base font-black text-shadow-grey dark:text-platinum font-retro">
                 No hay turnos configurados para este día
               </h4>
-              <p className="text-xs text-dim-grey mt-1">
+              <p className="text-xs text-dim-grey dark:text-platinum/70 mt-1">
                 Probá seleccionando otra fecha en el calendario.
               </p>
             </div>
@@ -464,23 +464,30 @@ export default function CourtDetail() {
           setSelectedSlot(null);
         }}
         message={
-          <div className="space-y-3">
-            <p>
-              Estás a punto de reservar la <strong className="text-shadow-grey">{court.name}</strong> para el día:
+          <div className="space-y-3 text-shadow-grey dark:text-platinum">
+            <p className="text-sm">
+              Estás a punto de reservar la{' '}
+              <strong className="text-shadow-grey dark:text-mustard font-bold">{court.name}</strong> para el día:
             </p>
-            <div className="p-3 bg-platinum border-2 border-shadow-grey text-xs space-y-1 font-mono">
-              <div>
-                <strong>Fecha:</strong> {selectedDate} ({selectedSlot?.day_name})
+            <div className="p-3.5 bg-platinum dark:bg-[#1a1a1a] border-2 border-shadow-grey dark:border-dim-grey/60 text-xs space-y-1.5 font-mono text-shadow-grey dark:text-platinum shadow-[2px_2px_0px_#272727] dark:shadow-[2px_2px_0px_#111111]">
+              <div className="flex items-center justify-between">
+                <span className="text-dim-grey dark:text-platinum/70 font-semibold">Fecha:</span>
+                <span className="font-bold">{selectedDate} ({selectedSlot?.day_name})</span>
               </div>
-              <div>
-                <strong>Horario:</strong> {selectedSlot?.formatted || `${selectedSlot?.start_time} a ${selectedSlot?.end_time} hs`}
+              <div className="flex items-center justify-between">
+                <span className="text-dim-grey dark:text-platinum/70 font-semibold">Horario:</span>
+                <span className="font-bold text-pacific-blue dark:text-mustard">
+                  {selectedSlot?.formatted || `${selectedSlot?.start_time} a ${selectedSlot?.end_time} hs`}
+                </span>
               </div>
-              <div>
-                <strong>Precio:</strong> {formattedPrice}
+              <div className="flex items-center justify-between pt-1 border-t border-dim-grey/20 dark:border-dim-grey/40">
+                <span className="text-dim-grey dark:text-platinum/70 font-semibold">Precio:</span>
+                <span className="font-extrabold text-sm text-shadow-grey dark:text-mustard font-retro">{formattedPrice}</span>
               </div>
             </div>
-            <p className="text-xs text-dim-grey">
-              Tu turno se registrará con estado <em>pendiente</em> hasta que el administrador del club lo confirme.
+            <p className="text-xs text-dim-grey dark:text-platinum/70">
+              Tu turno se registrará con estado{' '}
+              <strong className="text-shadow-grey dark:text-mustard font-bold">pendiente</strong> hasta que el administrador del club lo confirme.
             </p>
           </div>
         }

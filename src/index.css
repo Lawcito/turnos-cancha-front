@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-shadow-grey: #272727;
   --color-mustard: #fed766;
@@ -24,12 +26,25 @@
   background-color: #ffffff;
   border: 2px solid #272727;
   box-shadow: 4px 4px 0px #272727;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+:where(.dark, .dark *) .retro-card {
+  background-color: #272727;
+  border-color: #696773;
+  box-shadow: 4px 4px 0px #111111;
+  color: #eff1f3;
 }
 
 .retro-card-interactive:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px #272727;
+}
+
+:where(.dark, .dark *) .retro-card-interactive:hover {
+  transform: translate(-2px, -2px);
+  border-color: #fed766;
+  box-shadow: 6px 6px 0px #fed766;
 }
 
 .retro-btn {
@@ -40,13 +55,23 @@
   font-weight: 700;
   border: 2px solid #272727;
   box-shadow: 3px 3px 0px #272727;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease, border-color 0.15s ease;
   user-select: none;
+}
+
+:where(.dark, .dark *) .retro-btn {
+  border-color: #696773;
+  box-shadow: 3px 3px 0px #111111;
 }
 
 .retro-btn:hover:not(:disabled) {
   transform: translate(-1px, -1px);
   box-shadow: 4px 4px 0px #272727;
+}
+
+:where(.dark, .dark *) .retro-btn:hover:not(:disabled) {
+  box-shadow: 4px 4px 0px #fed766;
+  border-color: #fed766;
 }
 
 .retro-btn:active:not(:disabled) {
@@ -60,7 +85,14 @@
   color: #272727;
   box-shadow: 2px 2px 0px rgba(39, 39, 39, 0.2);
   outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+:where(.dark, .dark *) .retro-input {
+  border-color: #696773;
+  background-color: #1a1a1a;
+  color: #eff1f3;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .retro-input:focus {
@@ -68,9 +100,13 @@
   box-shadow: 3px 3px 0px #009fb7;
 }
 
+:where(.dark, .dark *) .retro-input:focus {
+  border-color: #fed766;
+  box-shadow: 3px 3px 0px #fed766;
+}
+
 /* Subtle retro halftone / dot pattern for header */
 .bg-retro-dots {
   background-image: radial-gradient(#696773 1px, transparent 1px);
   background-size: 16px 16px;
 }
-
